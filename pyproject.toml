@@ -24,6 +24,7 @@ black = {version = "19.3b0", allows-prereleases = true}
 flake8 = "^3.7"
 pydocstyle = "^4.0"
 pytest = "^3.0"
+requests = "^2.22"
 
 [tool.black]
 include = "(^|/)src/.*\\.pyi?$"
