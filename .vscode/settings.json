@@ -1,0 +1,97 @@
+{
+  "cSpell.ignoreWords": [
+    "cond",
+    "def",
+    "entrypoints",
+    "isort",
+    "joblib",
+    "mccabe",
+    "ndarray",
+    "nltk",
+    "noqa",
+    "preds",
+    "probs",
+    "punkt",
+    "pycodestyle",
+    "pydocstyle",
+    "pyflakes",
+    "pypi",
+    "scikit",
+    "scipy",
+    "sklearn",
+    "snowballstemmer",
+    "venv",
+    "venvs",
+    "virtualenv",
+    "virtualenvs",
+  ],
+  "cSpell.words": [
+    "multinomial"
+  ],
+  
+  "explorerExclude.backup": null,
+  "files.associations": {
+    "*.cfg": "ini",
+    ".env": "ini",
+    ".flake8": "ini",
+    "Pipfile": "toml"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.idea": true,
+    "**/.ipynb_checkpoints": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.vs": true,
+    "**/bin": true,
+    "**/obj": true,
+    "**/out": true,
+    "**/*.code-workspace": false,
+    "**/.vscode": true,
+    "**/.vscode/solution-explorer": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/target": false,
+    "**/.venv": true
+  },
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  
+  // Disable unused Python components.
+  "python.dataScience.enabled":        false,
+  "python.jediEnabled":                false,
+  "python.linting.banditEnabled":      false,
+  "python.linting.mypyEnabled":        false,  // Use the VSCode Pyright extension instead of MyPy.
+  "python.linting.prospectorEnabled":  false,
+  "python.linting.pycodestyleEnabled": false,
+  "python.linting.pylamaEnabled":      false,
+  "python.linting.pylintEnabled":      false,
+  
+  // Enable select Python components.
+  "python.formatting.provider": "black",
+  "python.linting.enabled":                  true,
+  "python.linting.flake8Enabled":            true,
+  "python.linting.pydocstyleEnabled":        true,
+  "python.workspaceSymbols.enabled":         true,
+  "vsintellicode.python.completionsEnabled": true,
+
+  // Locate relevant Python components in the local context.
+  "python.envFile":                "${workspaceFolder}/.env",
+  "python.linting.pydocstylePath": "${workspaceFolder}/.venv/Scripts/pydocstyle.exe",
+  "python.pythonPath":             "c:\\Users\\Travis.C.LaGrone\\Projects\\utd-cs6375-hw3\\.venv\\Scripts\\python.exe",
+
+  // Clear any/all confounding tool paths and arguments that may be otherwise inherited from the global/user VSCode settings.
+  "python.formatting.blackArgs":   [],
+  "python.linting.flake8Args":     [],
+  "python.linting.pydocstyleArgs": [],
+  "python.sortImports.path": null,
+  "restructuredtext.confPath": "", // python.sortImports is not disablable, so nullifying any pre-existing path is required instead.
+}

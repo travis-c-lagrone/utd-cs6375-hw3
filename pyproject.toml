@@ -1,0 +1,31 @@
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "hw3"
+version = "0.1.0"
+description = "Homework 3 for CS 6375.503 \"Machine Learning\" at the University of Texas at Dallas."
+authors = ["Travis C. LaGrone <22419287+travis-c-lagrone@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.rst"
+packages = [
+    { include = "hw2", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+numpy = "^1.17"
+sklearn = "^0.0.0"
+click = "^7.0"
+
+[tool.poetry.dev-dependencies]
+black = {version = "19.3b0", allows-prereleases = true}
+flake8 = "^3.7"
+pydocstyle = "^4.0"
+pytest = "^3.0"
+
+[tool.black]
+include = "(^|/)src/.*\\.pyi?$"
+safe = true
+target_version = "py37"
