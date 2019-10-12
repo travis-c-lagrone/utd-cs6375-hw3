@@ -30,41 +30,52 @@ class CorrelationCollaborativeFilter(BaseEstimator, ClassifierMixin):
         n = X.shape[0]
 
         means = X.mean(axis=1)  # [user]
-        marginals = np.empty(X.shape)  # [user, item]
-        for u in range(n):
-            marginals[u, :] = X[u] - means[u]
+        marginals = np.stack(X[u] - means[u] for u in range(n))  # [user, item]
 
         exists = X.astype(bool)  # [user, item]
         weights = np.empty((n, n))  # [user, user]
         for u1 in range(n):
             for u2 in range(u1, n):
+
                 if u1 == u2:
                     weights[u1, u2] = 0
                     continue
+
                 boths = exists[u1] & exists[u2]  # [item]
                 u1_marginals = marginals[u1][boths]
                 u2_marginals = marginals[u2][boths]
+
                 u1_dot_u1 = np.dot(u1_marginals, u1_marginals)
                 u1_dot_u2 = np.dot(u1_marginals, u2_marginals)
                 u2_dot_u2 = np.dot(u2_marginals, u2_marginals)
                 corr = u1_dot_u2 / np.sqrt(u1_dot_u1 * u2_dot_u2)
+
                 weights[u1, u2] = corr
 
         normalizers = np.empty(n)  # [user]
         for u1 in range(n):
-            sliced = (weights[min(u1, u2), max(u1, u2)] for u2 in range(n))
-            normed = (np.abs(w) for w in sliced)
+
+            coords = ((min(u1, u2), max(u1, u2)) for u2 in range(n))
+            multi_index = list(zip(*coords))
+            flat_indexes = np.ravel_multi_index(multi_index, weights.shape)
+            sliced = weights.ravel()[flat_indexes]
+
+            normed = (np.abs(w) for w in sliced)  # L1 norm
             summed = sum(normed)
             inverted = 1 / summed
+
             normalizers[u1] = inverted
 
         self._predictions = np.empty(X.shape)  # [user, item]
         for u1 in range(n):
-            indexed = (u2 for u2 in range(n) if u2 != u1)
-            weighted = [marginals[u2] * weights[u1, u2] for u2 in indexed]
+
+            others = (u2 for u2 in range(n) if u2 != u1)  # all other users
+
+            weighted = [marginals[u2] * weights[u1, u2] for u2 in others]
             summed = np.sum(weighted, axis=0)
             normalized = summed * normalizers[u1]
             offset = normalized + means[u1]
+
             self._predictions[u1, :] = offset
 
         return self
