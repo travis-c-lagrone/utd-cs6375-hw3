@@ -1,26 +1,30 @@
-"""Collaborative filtering algorithms."""
+"""Collaborative filtering algorithms for recommendation."""
 
 from numpy import ndarray
-from sklearn.base import BaseEstimator, ClassifierMixin
+from sklearn.base import BaseEstimator
 
 import numpy as np
 
 
-class CorrelationCollaborativeFilter(BaseEstimator, ClassifierMixin):
-    """Correlation collaborative filtering classifier."""
+class CorrelationCollaborativeFilter(BaseEstimator):
+    """Correlation collaborative filtering recommender."""
 
     X_: ndarray
     _predictions: ndarray
 
     def fit(self, X: ndarray) -> 'CorrelationCollaborativeFilter':
-        """Fit this correlation collaborative filtering classifier with data.
+        r"""Fit this correlation collaborative filtering recommender with data.
+
+        Eagerly computes all predictions. Eager prediction is at least as
+        efficient than lazy execution, assuming that the count of distinct
+        predictions that will be made is :math:`\Omega(\sqrt{|X|})`.
 
         Args:
             X (ndarray): Votes (values) by users (rows) on items (columns).
                 Votes are positive real numbers, where zero indicates no vote.
 
         Returns:
-            CorrelationCollaborativeFilter: This classifier, fit with ``X``.
+            CorrelationCollaborativeFilter: This recommender, fit with ``X``.
 
         """
         encapsulated = np.copy(X)
