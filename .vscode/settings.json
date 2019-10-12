@@ -50,14 +50,14 @@
     "**/bin": true,
     "**/obj": true,
     "**/out": true,
-    "**/*.code-workspace": true,
+    "**/*.code-workspace": false,
     "**/.vscode": true,
     "**/.vscode/solution-explorer": true,
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true,
-    "**/target": true,
+    "**/target": false,
     "**/.venv": true
   },
 
@@ -87,11 +87,11 @@
   "python.envFile":                "${workspaceFolder}/.env",
   "python.linting.pydocstylePath": "${workspaceFolder}/.venv/Scripts/pydocstyle.exe",
   "python.pythonPath":             "c:\\Users\\Travis.C.LaGrone\\Projects\\utd-cs6375-hw3\\.venv\\Scripts\\python.exe",
+  // "restructuredtext.confPath":     "",
 
   // Clear any/all confounding tool paths and arguments that may be otherwise inherited from the global/user VSCode settings.
   "python.formatting.blackArgs":   [],
   "python.linting.flake8Args":     [],
   "python.linting.pydocstyleArgs": [],
-  "python.sortImports.path": null,
-  "restructuredtext.confPath": "", // python.sortImports is not disablable, so nullifying any pre-existing path is required instead.
+  "python.sortImports.path":       null  // python.sortImports is not disablable, so nullifying any pre-existing path is required instead.
 }
