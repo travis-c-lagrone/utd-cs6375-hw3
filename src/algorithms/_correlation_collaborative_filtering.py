@@ -1,4 +1,4 @@
-"""Collaborative filtering algorithms for recommendation."""
+"""Correlation collaborative filtering for recommendation."""
 
 from numpy import ndarray
 from sklearn.base import BaseEstimator
