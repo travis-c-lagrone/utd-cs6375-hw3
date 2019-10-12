@@ -50,14 +50,14 @@
     "**/bin": true,
     "**/obj": true,
     "**/out": true,
-    "**/*.code-workspace": false,
+    "**/*.code-workspace": true,
     "**/.vscode": true,
     "**/.vscode/solution-explorer": true,
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true,
-    "**/target": false,
+    "**/target": true,
     "**/.venv": true
   },
 

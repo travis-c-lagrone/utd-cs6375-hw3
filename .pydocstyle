@@ -1,4 +1,6 @@
 [pydocstyle]
 convention = google
+match = .*\.pyi?
+match_dir = src|tests|scripts
 add_ignore =
-    D104,  ; Missing docstring in public module
+    D100,  ; Missing docstring in public module
