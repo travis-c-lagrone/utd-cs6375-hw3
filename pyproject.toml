@@ -24,6 +24,7 @@ pandas = "^0.25.1"
 black = {version = "19.3b0", allows-prereleases = true}
 flake8 = "^3.7"
 pydocstyle = "^4.0"
+jupyter = "^1.0"
 
 [tool.black]
 include = "(^|/)src/.*\\.pyi?$"
