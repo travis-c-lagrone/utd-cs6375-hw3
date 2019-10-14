@@ -10,21 +10,20 @@ authors = ["Travis C. LaGrone <22419287+travis-c-lagrone@users.noreply.github.co
 license = "MIT"
 readme = "README.rst"
 packages = [
-    { include = "hw2", from = "src" }
+    { include = "hw3", from = "src" }
 ]
 
 [tool.poetry.dependencies]
 python = "^3.7"
 numpy = "^1.17"
 sklearn = "^0.0.0"
-click = "^7.0"
+requests = "^2.22"
+pandas = "^0.25.1"
 
 [tool.poetry.dev-dependencies]
 black = {version = "19.3b0", allows-prereleases = true}
 flake8 = "^3.7"
 pydocstyle = "^4.0"
-pytest = "^3.0"
-requests = "^2.22"
 
 [tool.black]
 include = "(^|/)src/.*\\.pyi?$"

@@ -4,9 +4,13 @@
     "boths",
     "cond",
     "def",
+    "dtype",
     "entrypoints",
+    "fname",
+    "fpath",
     "isort",
     "joblib",
+    "loadtxt",
     "mccabe",
     "ndarray",
     "nltk",
@@ -34,7 +38,7 @@
   "cSpell.words": [
     "multinomial"
   ],
-  
+
   "explorerExclude.backup": null,
   "files.associations": {
     "*.cfg": "ini",
@@ -70,7 +74,7 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
-  
+
   // Disable unused Python components.
   "python.dataScience.enabled":        false,
   "python.jediEnabled":                false,
@@ -80,7 +84,7 @@
   "python.linting.pycodestyleEnabled": false,
   "python.linting.pylamaEnabled":      false,
   "python.linting.pylintEnabled":      false,
-  
+
   // Enable select Python components.
   "python.formatting.provider": "black",
   "python.linting.enabled":                  true,
@@ -99,5 +103,7 @@
   "python.formatting.blackArgs":   [],
   "python.linting.flake8Args":     [],
   "python.linting.pydocstyleArgs": [],
-  "python.sortImports.path":       null  // python.sortImports is not disablable, so nullifying any pre-existing path is required instead.
+  "python.sortImports.path": null,
+  "restructuredtext.confPath": "",
+  "cSpell.enabled": false // python.sortImports is not disablable, so nullifying any pre-existing path is required instead.
 }
