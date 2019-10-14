@@ -96,3 +96,8 @@ class CorrelationCollaborativeFilter(BaseEstimator):
 
         """
         return self._predictions[y, :].copy()
+
+
+__all__ = [
+    'CorrelationCollaborativeFilter'
+]

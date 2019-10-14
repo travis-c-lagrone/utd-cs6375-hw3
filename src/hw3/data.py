@@ -66,5 +66,12 @@ def import_metadata(*, path: Path=_DATA_DIR) -> pd.DataFrame:  # noqa: D103
     return df
 
 
+__all__ = [
+    'download_data',
+    'DataSplit',
+    'import_data',
+    'import_metadata',
+]
+
 if __name__ == '__main__':
     download_data()
